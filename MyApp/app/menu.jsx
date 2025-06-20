@@ -15,7 +15,7 @@ export default function MenuScreen() {
 
     const separatorComp = <View style={styles.separator} />
 
-    //const headerComp = <Text>Top of List</Text>
+    // const headerComp = <Text style={{ color: theme.text }}>Top of List</Text>
     const footerComp = <Text style={{ color: theme.text }}>End of Menu</Text>
 
     return (
