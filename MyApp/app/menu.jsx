@@ -15,7 +15,7 @@ export default function MenuScreen() {
 
     const separatorComp = <View style={styles.separator} />
 
-    // const headerComp = <Text style={{ color: theme.text }}>Top of List</Text>
+    const headerComp = <Text> Top of List</Text >
     const footerComp = <Text style={{ color: theme.text }}>End of Menu</Text>
 
     return (
@@ -27,7 +27,8 @@ export default function MenuScreen() {
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={styles.contentContainer}
                 ItemSeparatorComponent={separatorComp}
-                //ListHeaderComponent={headerComp}
+                ListHeaderComponent={headerComp}
+                ListHeaderComponentStyle={styles.headerComp}
                 ListFooterComponent={footerComp}
                 ListFooterComponentStyle={styles.footerComp}
                 ListEmptyComponent={<Text>No items</Text>}
@@ -65,6 +66,10 @@ function createStyles(theme, colorScheme) {
             marginHorizontal: 'auto',
             marginBottom: 10,
         },
+        headerComp: {
+            marginHorizontal: 'auto',
+        },
+
         footerComp: {
             marginHorizontal: 'auto',
         },
