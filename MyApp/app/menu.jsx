@@ -15,7 +15,7 @@ export default function MenuScreen() {
 
     const separatorComp = <View style={styles.separator} />
 
-    const headerComp = <Text> Top of List</Text >
+    const headerComp = <Text style={{ color: theme.text }}>Top of List</Text >
     const footerComp = <Text style={{ color: theme.text }}>End of Menu</Text>
 
     return (
@@ -24,14 +24,14 @@ export default function MenuScreen() {
             <FlatList
                 data={MENU_ITEMS}
                 keyExtractor={(item) => item.id.toString()}
-                showsVerticalScrollIndicator={false}
+                showsVerticalScrollIndicator={true}
                 contentContainerStyle={styles.contentContainer}
                 ItemSeparatorComponent={separatorComp}
-                ListHeaderComponent={headerComp}
-                ListHeaderComponentStyle={styles.headerComp}
+                // ListHeaderComponent={headerComp}
+                // ListHeaderComponentStyle={styles.headerComp}
                 ListFooterComponent={footerComp}
                 ListFooterComponentStyle={styles.footerComp}
-                ListEmptyComponent={<Text>No items</Text>}
+                ListEmptyComponent={<Text style={styles.emptyComp}>No items</Text>}
                 renderItem={({ item }) => (
                     <View style={styles.row}>
                         <View style={styles.menuTextRow}>
@@ -61,7 +61,7 @@ function createStyles(theme, colorScheme) {
         separator: {
             height: 1,
             backgroundColor: colorScheme === 'dark' ? 'papayawhip' : "#000",
-            width: '50%',
+            width: '80%',
             maxWidth: 300,
             marginHorizontal: 'auto',
             marginBottom: 10,
@@ -73,10 +73,14 @@ function createStyles(theme, colorScheme) {
         footerComp: {
             marginHorizontal: 'auto',
         },
+        emptyComp: {
+            marginVertical: 'auto',
+            marginHorizontal: 'auto',
+        },
         row: {
             flexDirection: 'row',
             width: '100%',
-            maxWidth: 600,
+            maxWidth: 400,
             height: 100,
             marginBottom: 10,
             borderStyle: 'solid',
