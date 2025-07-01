@@ -2,6 +2,7 @@ import { Text, View, TextInput, Pressable, StyleSheet, FlatList } from "react-na
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import { Inter_500Medium, useFonts } from "@expo-google-fonts/inter";
 
 import { data } from "@/data/todos"
 
